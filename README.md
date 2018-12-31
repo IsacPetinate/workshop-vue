@@ -15,6 +15,7 @@ _________________________________________
 - Instalação do NodeJS e Vue-CLI 3
 - Iniciando Projeto Vue com Webpack via Vue UI 
 - Instalando Plugins no Vue: Vuetify e AXIOS
+- Instalando Plugins no VS Code: Vetur, Vuetify
 - ... [continua]
 
 _________________________________________
