@@ -1,0 +1,53 @@
+{
+    "eletronicos":
+    [
+        {
+            "modelo": "iPhone 7",
+            "marca": "Apple",
+            "tipo": "Smartphone",
+            "img": ""
+        },
+        {
+            "modelo": "MacBook Pro 13",
+            "marca": "Apple",
+            "tipo": "Notebook",
+            "img": ""
+        },
+        {
+            "modelo": "Xbox ONE",
+            "marca": "Microsoft",
+            "tipo": "Videogame",
+            "img": ""
+        },
+        {
+            "modelo": "GO",
+            "marca": "JBL",
+            "tipo": "Speaker",
+            "img": ""
+        }
+    ],
+    "softwares":
+    [
+        {
+            "nome": "VS Code",
+            "descricao": "Editor de Texto para Programação.",
+            "produtora": "Microsoft",
+            "versao": "1.3",
+            "img": ""
+        },
+        {
+            "nome": "Insomnia",
+            "descricao": "Software para testar APIs REST e efetuar requisições HTTP.",
+            "produtora": "Insomnia",
+            "versao": "6.3",
+            "img": ""
+        },
+        {
+            "nome": "Firefox Developer",
+            "descricao": "Versão do Firefox focada em desenvolvimento web.",
+            "produtora": "Mozilla",
+            "versao": "65.0b7",
+            "img": ""
+        }
+    ]
+}
