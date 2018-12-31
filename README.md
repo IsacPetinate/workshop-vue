@@ -4,12 +4,13 @@
 
 > Conteúdo abordado:
 
-    * O que é:
+    - O que é:
       - Vue.js
       - Vuetify
       - PWA e SPA
       - AXIOS
       
-    * Instalação do NodeJS e Vue-CLI 3
-    * 
-    *
+    - Instalação do NodeJS e Vue-CLI 3
+    - Iniciando Projeto Vue com Webpack via Vue UI 
+    - Instalando Plugins no Vue: Vuetify e AXIOS
+    - ... [continua]
