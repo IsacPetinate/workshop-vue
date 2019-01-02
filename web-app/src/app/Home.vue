@@ -2,7 +2,7 @@
   <v-container grid-list-xs>
     <v-layout row justify-center align-content-center>
       <v-flex xs12 md8>
-        <v-list two-line subheader>
+        <v-list dark two-line subheader>
           <v-subheader inset>Eletronicos</v-subheader>
           <v-list-tile
             v-for="eletronico in eletronicos"
