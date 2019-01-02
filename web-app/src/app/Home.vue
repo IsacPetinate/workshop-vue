@@ -1,36 +1,68 @@
 <template>
-  <v-container>
-    <v-layout
-      text-xs-center
-      wrap
-    >
-      <v-flex xs12>
-        <v-img
-          :src="require('../assets/logo.svg')"
-          class="my-3"
-          contain
-          height="200"
-        ></v-img>
-      </v-flex>
-
-      <v-flex mb-4>
-        <h1 class="display-2 font-weight-bold mb-3">
-          Bem vindo ao App Minhas Notas
-        </h1>
-        <p class="subheading font-weight-regular">
-          For help and collaboration with other Vuetify developers,
-          <br>please join our online
-          <a href="https://community.vuetifyjs.com" target="_blank">Discord Community</a>
-        </p>
+  <v-container grid-list-xs>
+    <v-layout row justify-center align-content-center>
+      <v-flex xs12 md8>
+        <v-list two-line subheader>
+          <v-subheader inset>Eletronicos</v-subheader>
+          <v-list-tile
+            v-for="eletronico in eletronicos"
+            :key="eletronico.id"
+            avatar
+            @click="link"
+          >
+            <v-list-tile-avatar>
+              <v-icon>smartphone</v-icon>
+            </v-list-tile-avatar>
+            <!--  -->
+            <v-list-tile-content>
+              <v-list-tile-title>{{ eletronico.modelo }}</v-list-tile-title>
+              <v-list-tile-sub-title>Marca: {{ eletronico.marca }}</v-list-tile-sub-title>
+            </v-list-tile-content>
+          </v-list-tile>
+            <!--  -->
+          <v-divider inset></v-divider>
+            <!--  -->
+          <v-subheader inset>Softwares</v-subheader>
+          <v-list-tile
+            v-for="software in softwares"
+            :key="software.id"
+            avatar
+            @click="link"
+          >
+            <v-list-tile-avatar>
+              <v-icon>developer_mode</v-icon>
+            </v-list-tile-avatar>
+            <!--  -->
+            <v-list-tile-content>
+              <v-list-tile-title>{{ software.nome }}</v-list-tile-title>
+              <v-list-tile-sub-title>Produtora: {{ software.produtora }} — Descrição: {{ software.descricao }}</v-list-tile-sub-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-list>
       </v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
+import Eletronicos from '../domain/services/eletronicos'
+import Softwares from '../domain/services/softwares'
+
 export default {
-  data: () => ({
-    // Algo aqui dentro
-  })
+  name: 'Home',
+  data () {
+    return {
+      eletronicos: [],
+      softwares: []
+    }
+  },
+  mounted () {
+    Eletronicos.listar().then(resposta => {
+      this.eletronicos = resposta.data
+    })
+    Softwares.listar().then(resposta => {
+      this.softwares = resposta.data
+    })
+  }
 }
 </script>

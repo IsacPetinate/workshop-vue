@@ -1,10 +1,18 @@
 <template>
   <v-app>
-    <v-toolbar dark app>
-      <v-toolbar-title class="headline">
-        <v-icon>format_list_numbered</v-icon>
-        <span class="font-weight-light"> Minha Lista</span>
+    <v-toolbar color="primary" dark>
+      <v-toolbar-title>
+        <v-chip color="secondary" text-color="white">
+          <v-avatar>
+            <v-icon>check_circle</v-icon>
+          </v-avatar>
+          Minha Lista
+        </v-chip>
       </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn icon>
+        <v-icon>more_vert</v-icon>
+      </v-btn>
     </v-toolbar>
     <!--  -->
     <v-content>
