@@ -1,43 +1,45 @@
 <template>
   <v-container grid-list-xs>
-    <v-layout row justify-center align-content-center>
-      <v-flex xs12 md8>
-        <v-card dark>
+    <v-layout row wrap justify-center align-content-center>
+      <v-flex md6 xs12>
+        <v-card class="espaco" dark>
+          <!-- Lista Dinâmica com um FOR que preenche com dados da API -->
           <v-list
-            v-for="(nota, index) in notas"
-            :key="index.id"
-            class="espaco"
+            v-for="(nota, i) in notas"
+            :key="i"
+            class="texto"
           >
-            {{ nota.titulo }}
-            <br>
-            {{ nota.texto }}
-            <!-- <v-btn
-              @click="remover"
-              right flat
-              icon color="red"
-            >
-              <v-icon>delete</v-icon>
-            </v-btn> -->
+          <!-- Interpolação de Variáveis com 'Mustache Sintax {{ var }}' -->
+          {{ nota.titulo }}
+          <br>
+          {{ nota.texto }}
           </v-list>
-          <v-divider></v-divider>
-          <v-form class="espaco">
+          <br>
+          <!-- Formulário -->
+          <form>
+            <!-- Campo para entrada do Titulo -->
             <v-text-field
               v-model="nota.titulo"
-              name="titulo"
               label="Titulo"
               id="titulo"
               outline
             ></v-text-field>
+            <!-- Campo para a entrada do Texto -->
             <v-textarea
               v-model="nota.texto"
-              name="texto"
               label="Texto"
               id="texto"
               outline
-            ></v-textarea>
-            <v-spacer></v-spacer>
-            <v-btn @click="salvar" color="success">Salvar</v-btn>
-          </v-form>
+            >
+            </v-textarea>
+            <!-- Botão Salvar que chama o Método 'salvar' com o evento @click="" -->
+            <v-btn
+              @click="salvar"
+              color="primary"
+            >
+              Salvar
+            </v-btn>
+          </form>
         </v-card>
       </v-flex>
     </v-layout>
@@ -45,13 +47,16 @@
 </template>
 
 <script>
-import Nota from '../domain/services/Notas'
+// Import do objeto Nota do modulo Notas do nosso /api/services
+import Nota from '../domain/services/notas'
 
 export default {
   name: 'Home',
   data () {
     return {
+      // Objeto notas recebe os dados do GET
       notas: [],
+      // Objeto nota passa os parametros do POST
       nota: {
         id: null,
         titulo: '',
@@ -60,25 +65,24 @@ export default {
     }
   },
   methods: {
+    // Metodo Listar, retorna os dados do GET na variável 'resposta'
     listar () {
       Nota.listar().then(resposta => {
+        console.log(resposta)
         this.notas = resposta.data
       })
     },
+    // Metodo Salvar, passa os parametros do objeto nota para o POST
     salvar () {
       Nota.salvar(this.nota).then(resposta => {
-        alert('Salvo com sucesso!')
-        this.listar()
-        this.nota = {}
-      })
-    },
-    remover (nota) {
-      // if (confirm('Tem certeza que deseja excluir o item?')) {}
-      Nota.apagar(nota).then(resposta => {
-        this.listar()
+        this.nota = resposta.data
+        this.listar() // Atualiza a lista após inserir um novo item
+        this.nota = {} // Limpa os campos após inserir novos dados
       })
     }
   },
+  // Ciclo de vida da aplicação Monta a chama do método Listar
+  // Guia: https://br.vuejs.org/v2/guide/instance.html
   mounted () {
     this.listar()
   }
@@ -86,7 +90,10 @@ export default {
 </script>
 
 <style>
+.texto {
+  font-size: 15px;
+}
 .espaco {
-  padding: 25px;
+  padding: 15px;
 }
 </style>

@@ -1,14 +1,14 @@
+// Importaçao da constante HTTP do config.js da API onde possui a baseURL e etc
 import { http } from '../api/config'
 
 export default {
-  // Métodos para GET, POST, PUT, DELETE
+  // Método para listar as notas - GET
   listar: () => {
     return http.get('notas/')
   },
+  // Método para salvar as Notas - POST
+  // Este método precisa que passe o objeto 'nota' como retorno
   salvar: (nota) => {
     return http.post('notas/', nota)
-  },
-  apagar: (nota) => {
-    return http.delete('notas/', { data: nota })
   }
 }

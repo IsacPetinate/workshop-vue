@@ -1,0 +1,28 @@
+{
+  "notas": [
+    {
+      "id": 1,
+      "titulo": "Nota 1",
+      "texto": "Minha primeira anotacao"
+    },
+    {
+      "id": 2,
+      "titulo": "Nota 2",
+      "texto": "Minha segunda anotacao"
+    },
+    {
+      "id": 3,
+      "titulo": "Nota 3",
+      "texto": "Minha terceira anotacao"
+    },
+    {
+      "isTrusted": true,
+      "id": 4
+    },
+    {
+      "id": 5,
+      "titulo": "Nota 4",
+      "texto": "Minha quarta nota"
+    }
+  ]
+}
