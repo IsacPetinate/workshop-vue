@@ -2,67 +2,97 @@
   <v-container grid-list-xs>
     <v-layout row justify-center align-content-center>
       <v-flex xs12 md8>
-        <v-list dark two-line subheader>
-          <v-subheader inset>Eletronicos</v-subheader>
-          <v-list-tile
-            v-for="eletronico in eletronicos"
-            :key="eletronico.id"
-            avatar
-            @click="link"
+        <v-card dark>
+          <v-list
+            v-for="(nota, index) in notas"
+            :key="index.id"
+            class="espaco"
           >
-            <v-list-tile-avatar>
-              <v-icon>smartphone</v-icon>
-            </v-list-tile-avatar>
-            <!--  -->
-            <v-list-tile-content>
-              <v-list-tile-title>{{ eletronico.modelo }}</v-list-tile-title>
-              <v-list-tile-sub-title>Marca: {{ eletronico.marca }}</v-list-tile-sub-title>
-            </v-list-tile-content>
-          </v-list-tile>
-            <!--  -->
-          <v-divider inset></v-divider>
-            <!--  -->
-          <v-subheader inset>Softwares</v-subheader>
-          <v-list-tile
-            v-for="software in softwares"
-            :key="software.id"
-            avatar
-            @click="link"
-          >
-            <v-list-tile-avatar>
-              <v-icon>developer_mode</v-icon>
-            </v-list-tile-avatar>
-            <!--  -->
-            <v-list-tile-content>
-              <v-list-tile-title>{{ software.nome }}</v-list-tile-title>
-              <v-list-tile-sub-title>Produtora: {{ software.produtora }} — Descrição: {{ software.descricao }}</v-list-tile-sub-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list>
+            {{ nota.titulo }}
+            <br>
+            {{ nota.texto }}
+            <v-btn
+              @click="remover"
+              right flat
+              icon color="red"
+            >
+              <v-icon>delete</v-icon>
+            </v-btn>
+          </v-list>
+          <v-divider></v-divider>
+          <v-form class="espaco">
+            <v-text-field
+              v-model="nota.titulo"
+              name="titulo"
+              label="Titulo"
+              id="titulo"
+              outline
+            ></v-text-field>
+            <v-textarea
+              v-model="nota.texto"
+              name="texto"
+              label="Texto"
+              id="texto"
+              outline
+            ></v-textarea>
+            <v-btn @click="salvar" color="success">Salvar</v-btn>
+          </v-form>
+        </v-card>
       </v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
-import Eletronicos from '../domain/services/eletronicos'
-import Softwares from '../domain/services/softwares'
+import Nota from '../domain/services/Notas'
 
 export default {
   name: 'Home',
   data () {
     return {
-      eletronicos: [],
-      softwares: []
+      notas: [],
+      nota: {
+        id: null,
+        titulo: '',
+        texto: ''
+      },
+      errors: []
+    }
+  },
+  methods: {
+    listar () {
+      Nota.listar().then(resposta => {
+        this.notas = resposta.data
+      })
+    },
+    salvar () {
+      Nota.salvar(this.nota).then(resposta => {
+        alert('Salvo com sucesso!')
+        this.listar()
+        this.nota = {}
+      }).catch(e => {
+        this.errors = e.response.data.errors
+      })
+    },
+    remover (nota) {
+      this.nota = nota
+      
+      Nota.apagar(nota).then(resposta => {
+        this.listar()
+      }).catch(e => {
+        this.errors = e.response.data.errors
+      })
+      // if (confirm('Tem certeza que deseja excluir o item?')) {}
     }
   },
   mounted () {
-    Eletronicos.listar().then(resposta => {
-      this.eletronicos = resposta.data
-    })
-    Softwares.listar().then(resposta => {
-      this.softwares = resposta.data
-    })
+    this.listar()
   }
 }
 </script>
+
+<style>
+.espaco {
+  padding: 25px;
+}
+</style>

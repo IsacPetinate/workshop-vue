@@ -1,18 +1,12 @@
 <template>
   <v-app>
-    <v-toolbar color="primary" dark>
+    <v-toolbar color="indigo" dark>
       <v-toolbar-title>
-        <v-chip color="secondary" text-color="white">
-          <v-avatar>
-            <v-icon>check_circle</v-icon>
-          </v-avatar>
-          Minha Lista
-        </v-chip>
+        <v-avatar>
+          <v-icon>speaker_notes</v-icon>
+        </v-avatar>
+        Minha Lista
       </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn icon>
-        <v-icon>more_vert</v-icon>
-      </v-btn>
     </v-toolbar>
     <!--  -->
     <v-content>
