@@ -11,13 +11,13 @@
             {{ nota.titulo }}
             <br>
             {{ nota.texto }}
-            <v-btn
+            <!-- <v-btn
               @click="remover"
               right flat
               icon color="red"
             >
               <v-icon>delete</v-icon>
-            </v-btn>
+            </v-btn> -->
           </v-list>
           <v-divider></v-divider>
           <v-form class="espaco">
@@ -35,6 +35,7 @@
               id="texto"
               outline
             ></v-textarea>
+            <v-spacer></v-spacer>
             <v-btn @click="salvar" color="success">Salvar</v-btn>
           </v-form>
         </v-card>
@@ -55,8 +56,7 @@ export default {
         id: null,
         titulo: '',
         texto: ''
-      },
-      errors: []
+      }
     }
   },
   methods: {
@@ -70,19 +70,13 @@ export default {
         alert('Salvo com sucesso!')
         this.listar()
         this.nota = {}
-      }).catch(e => {
-        this.errors = e.response.data.errors
       })
     },
     remover (nota) {
-      this.nota = nota
-      
+      // if (confirm('Tem certeza que deseja excluir o item?')) {}
       Nota.apagar(nota).then(resposta => {
         this.listar()
-      }).catch(e => {
-        this.errors = e.response.data.errors
       })
-      // if (confirm('Tem certeza que deseja excluir o item?')) {}
     }
   },
   mounted () {
