@@ -12,20 +12,20 @@ _________________________________________
     - PWA e SPA
     - AXIOS
       
-- Instalação do NodeJS e Vue-CLI 3
+- Instalação do Vue-CLI 3
 - Iniciando Projeto Vue com Webpack via Vue UI 
 - Instalando Plugins no Vue: Vuetify e AXIOS
 - Instalando Plugins no VS Code: Vetur, Vuetify
-- ... [continua]
+- 
 
 _________________________________________
 
-> Comandos [Terminal/PowerShell/CMD]:
-
-- $ npm install @vue/cli
-- $ vue create app-web
-- $ vue ui
-
+> Comandos Úteis [Terminal/PowerShell/CMD]:
+```
+npm install -g @vue/cli     ----> instala o Vue CLI na versão 3 (mais recente), -g para ser instalado globalmente
+vue create web-app          ----> cria um novo projeto Vue com webpack e configurações default
+vue ui                      ----> inicia a dashboard gráfica do vue
+```
 > ## Requisitos:
 
 - [NodeJS](https://nodejs.org/en/)
