@@ -14,6 +14,8 @@
 - /plugins
   - aqui ficam seus plugins, aparece aqui ao instalar um novo pela Dashboard (`vue ui`)
 
+------------------------------
+
 > Após clonar o repositório ou baixar os arquivos, rode o comando abaixo em um terminal dentro da basta raiz onde você descompactou/clonou o projeto:
 ```
 npm install

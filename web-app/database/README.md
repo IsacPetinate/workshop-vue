@@ -9,13 +9,13 @@
 - Instale o JSON SERVER (via NPM)
 
 ```
-$ npm i -g json-server
+npm i -g json-server
 ```
 
 - Após a instalação, abra um Terminal/Powershell/CMD, navegue até a pasta /database onde o arquivo db.json está, e rode o seguinte comando para iniciar a API fake com JSON Server:
 
 ```
-$ json-server db.json
+json-server db.json
 ```
 
 - Sua API irá ser iniciada e estará pronta para interação com o seu Front-end atráves dos métodos de consumo de API (utilizando AXIOS, XMLHttpRequest ou Fetch como Client, no nosso caso o AXIOS)
