@@ -24,5 +24,12 @@ $ json-server db.json
 
 > Algumas observações:
 
-- O primeiro parametro do objeto no arquivo db.json é considerado pelo json-server como o que seria o 'endpoint' de uma API, então caso queira mais 'endpoints', basta criar mais parametros abaixo do parametro "notas".
+- O primeiro parametro do objeto no arquivo db.json é considerado pelo json-server como o que seria o 'endpoint' de uma API, então caso queira mais 'endpoints', basta criar mais parametros abaixo do "notas".
 - O nome do Arquivo é db.json por questões de semantica e facilidade de localização dentro do projeto, podendo ser alterado para o nome que desejar, porem ao alterar o nome do arquivo deverá ser alterado também o nome no comando `$ json-server nome-do-arquivo.json`
+
+> Links de Apoio:
+
+[Documentação - JSON Server](https://github.com/typicode/json-server)
+[Rodar seu database json online](https://my-json-server.typicode.com/)
+[JSONPlaceholder API online para testes/prototipos](http://jsonplaceholder.typicode.com/)
+[Criando uma API REST falsa com JSON Server](https://code.tutsplus.com/pt/tutorials/fake-rest-api-up-and-running-using-json-server--cms-27871)
