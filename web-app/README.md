@@ -2,6 +2,8 @@
 
 > ## Estrutura:
 
+- /database - camada da base de dados para a API fake com JSON Server
+- /node_modules - modulos de funcionamento do node e do framework e dependencias
 - /public
   - /img - icones e imagens da PWA
   - index.html - arquivo HTML onde o JS será injetado
@@ -11,8 +13,12 @@
   - /domain - camada de dominio, onde ficarão as regras e lógicas do JS da app
     - /api - sub camada contendo configurações base da conexao com a API
     - /services - sub camada contendo regras especificas de cada enpoint ou entidade
-- /plugins
-  - aqui ficam seus plugins, aparece aqui ao instalar um novo pela Dashboard (`vue ui`)
+  - /plugins
+    - aqui ficam seus plugins, aparece aqui ao instalar um novo pela Dashboard (`vue ui`)
+  - App.vue - base da aplicação, componente que da corpo para a SPA e que é injetado no index.html
+  - main.js - configurações e base do Vue, novos componentes devem ser importados nesse arquivo para funcionarem na aplicação
+  - registerServiceWorker.js - arquivo de registro do ServiceWorker para a PWA funcionar offline
+  - router.js - configurações e rotas da aplicação (rotas que são renderizadas no <router-view /> do App.vue)
 
 ------------------------------
 
