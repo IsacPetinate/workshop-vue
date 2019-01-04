@@ -30,6 +30,9 @@ $ json-server db.json
 > Links de Apoio:
 
 [Documentação - JSON Server](https://github.com/typicode/json-server)
+
 [Rodar seu database json online](https://my-json-server.typicode.com/)
+
 [JSONPlaceholder API online para testes/prototipos](http://jsonplaceholder.typicode.com/)
+
 [Criando uma API REST falsa com JSON Server](https://code.tutsplus.com/pt/tutorials/fake-rest-api-up-and-running-using-json-server--cms-27871)
