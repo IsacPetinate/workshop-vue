@@ -25,6 +25,7 @@ _________________________________________
 
 > ## Atenção:
 
+- Todos os arquivos estão comentados e com guias do que são/significam, então leia e qualquer duvida entre em contato ou abra uma issue (não é recomendado, mas nesse caso não tem problema)
 - Verifique os README dos diretórios deste repósitorio para maiores informações, procurei detalhar melhor o processo de API Fake com JSON Server no README da Pasta [/database](https://github.com/IsacPetinate/workshop-vue/tree/master/web-app/database) que está dentro da pasta /web-app, e as informações mais detalhadas sobre as estrutura do projeto e o que são cada item pode ser encontrada no README do diretório [/web-app](https://github.com/IsacPetinate/workshop-vue/tree/master/web-app)
 - A Apresentação de slides em formato PowerPoint e PDF pode ser encontrada na pasta [Apresentação](https://github.com/IsacPetinate/workshop-vue/tree/master/Apresenta%C3%A7%C3%A3o)
 _________________________________________
