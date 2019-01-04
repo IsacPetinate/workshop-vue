@@ -35,12 +35,16 @@ npm install -g @vue/cli     ----> instala o Vue CLI na versão 3, -g para instal
 vue create web-app          ----> cria um novo projeto Vue com webpack e configurações default
 vue ui                      ----> inicia a dashboard gráfica do vue
 ```
-> ## Requisitos:
+> ## Requisitos e Links:
 
-- [NodeJS](https://nodejs.org/en/)
+- [NodeJS](https://nodejs.org/en/) [página de download]
 
-- [Vue-CLI 3](https://cli.vuejs.org/guide/)
+- [Vue-CLI 3](https://cli.vuejs.org/guide/) [documentação e quickstart]
 
-- [Vuetify](https://vuetifyjs.com/pt-BR/getting-started/quick-start)
+- [Vuetify](https://vuetifyjs.com/pt-BR/getting-started/quick-start) [documentação e quickstart]
 
-- [AXIOS](https://github.com/axios/axios)
+- [AXIOS](https://github.com/axios/axios) [documentação e quickstart]
+
+- [JSON Server](https://www.npmjs.com/package/json-server) [repositório npm]
+
+- [Material Icons](https://material.io/tools/icons/?search=list&style=baseline) [consulta de icones]
